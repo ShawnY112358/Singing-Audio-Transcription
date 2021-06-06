@@ -18,7 +18,7 @@ silent_threshold = 1
 
 def pitch_predict(model='yin'):
     onset_dir = './onset_predict'
-    wav_dir = '../data_test'
+    wav_dir = './data_test'
     result_dir = './result'
     if not os.path.exists(result_dir):
         os.mkdir(result_dir)
@@ -40,7 +40,7 @@ def pitch_predict(model='yin'):
             #     f.close()
             onset, offset, onset_dict = note_cut(y, f0, sr, onset_list)
             pitch = mono_tri_quantile(onset_dict)
-            # pitch = [69 + 12 * math.log(f0[i] / 440, 2) for i in range(len(pitch))]
+            pitch = [69 + 12 * math.log(pitch[i] / 440, 2) for i in range(len(pitch))]
             with open(os.path.join(result_dir, list.split('.')[0] + '.txt'), 'w') as f:
                 for i in range(len(onset)):
                     f.write(str(onset[i]) + '\n' + str(offset[i]) + '\n' + str(pitch[i]) + '\n')

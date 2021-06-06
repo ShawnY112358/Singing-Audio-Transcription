@@ -5,7 +5,7 @@ K = 5
 def onset_eval():
     tp_list, fp_list, fn_list = [], [], []
     predict_dir = './onset_predict'
-    ground_truth_dir = '../ground_truth'
+    ground_truth_dir = './ground_truth'
     test_num = 0
     for list in os.listdir(predict_dir):
         with open(os.path.join(predict_dir, list)) as f:
@@ -48,7 +48,7 @@ def note_eval():
     tp_list, fp_list, fn_list = [], [], []
 
     predict_dir = './result'
-    ground_truth_dir = '../ground_truth'
+    ground_truth_dir = './ground_truth'
     test_num = 0
     for list in os.listdir(predict_dir):
         with open(os.path.join(predict_dir, list)) as f:

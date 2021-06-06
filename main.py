@@ -14,10 +14,10 @@ from pick_threshold import main
 #
 # onset_p('./model0.pt', 0)
 #
-# onset_predict('./model0.pt')
+onset_predict('./model0.pt')
 pitch_predict()
 precision, recall, f1 = onset_eval()
 precision, recall, f1 = note_eval()
-# print(precision)
+print(precision)
 
 main()

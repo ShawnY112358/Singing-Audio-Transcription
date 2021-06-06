@@ -12,14 +12,14 @@ sample_rate = 44100
 n_mels = 128
 time_win_size = 9
 
-peak_threshold = 0.0045
+peak_threshold = 0.008
 shortest_note = 5   #最短音符帧长
 
 def onset_predict(model_name, threshold=peak_threshold):
 
     model = convnet1()
     model.load_state_dict(torch.load(model_name))
-    dir = '../data_test'
+    dir = './data_test'
     predict_dir = './onset_predict'
     ground_truth = '../ground_truth'
     if not os.path.exists(predict_dir):
